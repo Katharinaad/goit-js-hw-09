@@ -5,6 +5,15 @@ const amountInput = document.querySelector('input[name=amount]');
 
 form.addEventListener('submit', onFormSubmit);
 
+function onFormSubmit(event) {
+  event.preventDefault();
+
+  let delay = Number(firstDelay.value);
+  let step = Number(delayStep.value);
+  let amount = Number(amountInput.value);
+  let position = 0;
+}
+
 function createPromise(position, delay) {
   const promise = new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
