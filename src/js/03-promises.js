@@ -24,7 +24,7 @@ function onFormSubmit(event) {
 }
 
 function createPromise(position, delay) {
-  return (promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
     setTimeout(() => {
       if (shouldResolve) {
@@ -35,7 +35,8 @@ function createPromise(position, delay) {
         reject({ position, delay });
       }
     }, delay);
-  }));
+  });
+  return promise;
 }
 
 function onSuccess({ position, delay }) {
